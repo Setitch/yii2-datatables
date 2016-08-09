@@ -2,7 +2,7 @@
     "name": "setitch/yii2-datatables",
     "description": "Yii2 Extension for DataTables jQuery plug-in - stable",
     "type": "yii2-extension",
-    "homepage": "https://github.com/NullRefExcep/yii2-datatables",
+    "homepage": "https://github.com/Setitch/yii2-datatables",
     "keywords": [
         "yii2",
         "yii",
@@ -32,7 +32,7 @@
         "bower-asset/datatables-plugins": "~1.0"
     },
     "autoload": {
-        "psr-4": {"nullref\\datatable\\": "src/"}
+        "psr-4": {"setitch\\datatable\\": "src/"}
     },
     "extra": {
         "asset-installer-paths": {
