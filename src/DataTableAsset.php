@@ -5,7 +5,7 @@
  * @author Serhiy Vinichuk <serhiyvinichuk@gmail.com>
  */
 
-namespace nullref\datatable;
+namespace setitch\datatable;
 
 
 use yii\web\AssetBundle;
