@@ -4,16 +4,12 @@
  * @license MIT
  * @author Serhiy Vinichuk <serhiyvinichuk@gmail.com>
  */
-
 namespace nullref\datatable;
-
-
 use Yii;
 use yii\base\Action;
 use yii\base\InvalidConfigException;
 use yii\data\ActiveDataProvider;
 use yii\db\ActiveQuery;
-
 /**
  * Action for processing ajax requests from DataTables.
  * @see http://datatables.net/manual/server-side for more info
@@ -25,7 +21,6 @@ class DataTableAction extends Action
      * @var ActiveQuery
      */
     public $query;
-
     /**
      * Applies ordering according to params from DataTable
      * Signature is following:
@@ -33,7 +28,6 @@ class DataTableAction extends Action
      * @var  callable
      */
     public $applyOrder;
-
     /**
      * Applies filtering according to params from DataTable
      * Signature is following:
@@ -41,14 +35,12 @@ class DataTableAction extends Action
      * @var callable
      */
     public $applyFilter;
-
     public function init()
     {
         if ($this->query === null) {
             throw new InvalidConfigException(get_class($this) . '::$query must be set.');
         }
     }
-
     public function run()
     {
         /** @var ActiveQuery $originalQuery */
@@ -90,7 +82,6 @@ class DataTableAction extends Action
         }
         return $response;
     }
-
     /**
      * @param ActiveQuery $query
      * @param array $columns
@@ -102,7 +93,6 @@ class DataTableAction extends Action
         if ($this->applyOrder !== null) {
             return call_user_func($this->applyOrder, $query, $columns, $order);
         }
-
         foreach ($order as $key => $item) {
             // Begin of fix - avoid failure on columns not being orderable
         	if (array_key_exists('orderable', $columns[$item['column']]) && $columns[$item['column']]['orderable'] === 'false') {
@@ -114,7 +104,6 @@ class DataTableAction extends Action
         }
         return $query;
     }
-
     /**
      * @param ActiveQuery $query
      * @param array $columns
@@ -127,7 +116,6 @@ class DataTableAction extends Action
         if ($this->applyFilter !== null) {
             return call_user_func($this->applyFilter, $query, $columns, $search);
         }
-
         /** @var \yii\db\ActiveRecord $modelClass */
         $modelClass = $query->modelClass;
         $schema = $modelClass::getTableSchema()->columns;
