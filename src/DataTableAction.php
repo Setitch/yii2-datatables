@@ -4,7 +4,7 @@
  * @license MIT
  * @author Serhiy Vinichuk <serhiyvinichuk@gmail.com>
  */
-namespace nullref\datatable;
+namespace setitch\datatable;
 use Yii;
 use yii\base\Action;
 use yii\base\InvalidConfigException;
