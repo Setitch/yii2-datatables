@@ -5,12 +5,15 @@
  * @author Serhiy Vinichuk <serhiyvinichuk@gmail.com>
  */
 
-namespace nullref\datatable;
+namespace setitch\datatable;
 
 use yii\helpers\Html;
 use yii\helpers\Json;
 use yii\web\JsExpression;
 
+/**
+ * @deprecated
+ */
 class LinkColumn extends \yii\base\Object
 {
     public $queryParams = [];
