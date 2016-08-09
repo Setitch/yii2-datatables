@@ -1,3 +1,5 @@
+Forked because of instability of the source project.
+
 Yii2 DataTables
 ===============
 
